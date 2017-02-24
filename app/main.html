@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en"  ng-app="msapp">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <!-- Meta, title, CSS, favicons, etc. -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title ng-bind="title">angular demo </title>
+
+    <!-- Bootstrap -->
+    <link href="lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="lib/seiyria-bootstrap-slider/dist/css/bootstrap-slider.css">
+       <link rel="stylesheet" href="lib/datatables.net-bs/css/dataTables.bootstrap.min.css">
+         <link rel="stylesheet" href="lib/angular-datatables/dist/css/angular-datatables.min.css">
+    <!-- Custom Theme Style -->
+    <link href="css/custom.min.css" rel="stylesheet">
+  </head>
+
+    <body class="nav-md" ng-controller="ctrl">
+    <div class="container body">
+      <div class="main_container">
+         <div class="col-md-3 left_col" id="left_col_div">
+        
+          <div class="left_col scroll-view">
+              <div class="navbar nav_title" style="border: 0; ">
+	              <a href="index.html" class="site_title">
+	                    <img src="images/profile.jpg" style="height: 100px;width: 100px;"  >
+	             </a>
+                 <br/>
+                  <span style="font-size: 15px;">mio's angular test</span>
+                 
+            </div>
+
+            <div class="clearfix"></div>
+
+            <!-- /menu profile quick info -->
+
+            <br />
+
+            <!-- sidebar menu -->
+                <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
+              <div class="menu_section">
+      
+                <ul class="nav side-menu">
+                 <!--  <li><a><i class="fa fa-home"></i><span translate="main.menu.DATATABLE"> datatable</span> <span class="fa fa-chevron-down"></span></a>
+                    <ul class="nav child_menu">
+                         <li><a href="literatureList.html"> tab</a></li>
+                      <li><a href="groupList.html">Manage group</a></li>
+                    </ul>
+                  </li>--> 
+                  <li><a  href="#/datatable"><i class="fa fa-edit"></i><span translate="main.menu.DATATABLE">datatable</span><span class="fa fa-chevron-down"></span></a></li>
+                  <li><a  href="#/forms"><i class="fa fa-edit"></i><span translate="main.menu.FORMS">forms</span><span class="fa fa-chevron-down"></span></a></li>
+                  <li><a href="#/slider"><i class="fa fa-edit"></i><span translate="main.menu.SLIDER"> slider </span> <span class="fa fa-chevron-down"></span></a></li> 
+                  <li><a href="#/sortable"><i class="fa fa-edit"></i> <span translate="main.menu.SORTABLE">sortable </span> <span class="fa fa-chevron-down"></span></a></li> 
+                  <li><a href="#/dragdrop"><i class="fa fa-edit"></i><span translate="main.menu.DRAG"> drag and drop</span> <span class="fa fa-chevron-down"></span></a></li> 
+                </ul>
+              </div>
+            </div>
+            <!-- /sidebar menu -->
+
+          </div>
+        </div>
+
+        <!-- top navigation -->
+         <div class="top_nav" id="top_nav_div">
+				<div class="mod mod-Navigation">
+					<div class="sidebar-offcanvas navbar">
+						<div class="container">
+							<div class="container-inlay">
+
+								<div class="nav navbar-nav navbar-right" style="margin-top: 20px;">
+  									<span class="copy-site-identifier-1 hidden-xs top_title">mio's angular test </span>
+  									<div style="font-size: 20px; float: right;">
+									<a  href="" ng-click="setLang('en')">EN</a>
+									<a style=" padding: 10px 15px; font-size: 20px;" href="" ng-click="setLang('cn')">CN</a>
+									</div>
+								</div>
+								
+							</div>
+						</div>
+					</div>
+				</div>
+        </div>
+        <!-- /top navigation -->
+ <!-- page content -->
+        <div class="right_col" >
+          	<div class="page-holder" role="main">
+		<div  ng-view="" bs-loading-overlay="">
+		</div>
+	</div>
+        </div>
+       <!-- footer content -->
+        <footer>
+          
+        </footer>
+        <!-- /footer content -->
+      </div>
+    </div>
+
+    
+	<script src="lib/jquery/dist/jquery.min.js"></script>
+
+	<script src="lib/bootstrap/dist/js/bootstrap.min.js"></script>
+
+	<!-- Angular -->
+	<script src="lib/angular/angular.min.js"></script>
+    <script src="lib/angular-route/angular-route.js"></script>
+    <script src="lib/angular-bootstrap/ui-bootstrap.js"></script>
+ 
+    <script src="lib/angular-messages/angular-messages.js"></script>
+    
+    <script src="lib/ng-sortable/dist/ng-sortable.min.js"></script>
+
+    <script src="lib/angular-translate/angular-translate.js"></script>
+    <script src="lib/angular-translate-handler-log/angular-translate-handler-log.js"></script>
+	<script src="lib/angular-translate-loader-static-files/angular-translate-loader-static-files.js"></script>
+	
+	<script src="lib/angular-loading-overlay/dist/angular-loading-overlay.js"></script>
+    <script src="lib/angular-loading-overlay-http-interceptor/dist/angular-loading-overlay-http-interceptor.js"></script>
+    
+    <!-- moment -->
+    <script src="lib/moment/moment.js"></script>
+
+    <script src="lib/angular-no-captcha/build/angular-no-captcha.min.js"></script>
+	<script src="lib/seiyria-bootstrap-slider/dist/bootstrap-slider.js"></script>
+
+	<!-- angular-slider include -->
+     <script src="lib/angular-bootstrap-slider/slider.js"></script>
+    
+     <script src="lib/datatables.net/js/jquery.dataTables.min.js"></script>
+   <!--  --> <script src="lib/angular-datatables/dist/angular-datatables.js"></script>
+    
+     
+	<!-- angular -->
+	<script src="js/app.js"></script>
+	<script src="js/config.js"></script>
+	<script src="js/controller.js"></script>
+	<script src="js/services.js"></script>
+	<script src="js/loadServices.js"></script>
+	<script src="js/errorService.js"></script>
+	
+
+  </body>
+  </html>

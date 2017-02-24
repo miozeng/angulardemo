@@ -1,0 +1,12 @@
+{
+"main" : {
+  "TITLE" : "mio's angular test",
+  "menu" : {
+     "DATATABLE" : "datatable",
+     "SLIDER" : "slider",
+     "SORTABLE" : "sortable",
+     "FORMS" : "forms",
+     "DRAG" : "drag and drop"
+  } 
+}
+}

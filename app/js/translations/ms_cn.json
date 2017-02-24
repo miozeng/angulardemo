@@ -1,0 +1,12 @@
+{
+"main" : {
+  "TITLE" : "mio's angular test",
+  "menu" : {
+     "DATATABLE" : "表格",
+     "SLIDER" : "滑动器",
+     "SORTABLE" : "排序",
+     "FORMS" : "表单",
+     "DRAG" : "拖拽"
+  } 
+}
+}

@@ -1,0 +1,95 @@
+<div class="col-md-8 col-md-offset-2">
+<form  role="form" name="userForm" ng-submit="saveUser()" novalidate>
+       				<div class="col-md-12">
+					<div class="row">
+						<div class="col-xs-12">
+							<div class="form-group">
+								<h5 >Name</h5>
+								<div class="clearfix">
+									<div class="row">
+										<div class="col-sm-12">
+											<input type="text" name="name" ng-model="user.name" required ng-pattern ="/^[a-zA-Z\s]*$/"  ng-minlength="2"  ng-maxlength="100"
+												class="form-input form-control" >
+										</div>
+										<div  class="col-xs-12" ng-messages="userForm.name.$error" ng-show="valid">
+										       <div ng-message="pattern" class="error-message" >invalid</div>
+										       <div ng-message="required" class="error-message" >You did not input</div>
+										       <div ng-message="minlength" class="error-message" >too short</div>
+										       <div ng-message="maxlength" class="error-message">too long</div>
+									    </div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="col-xs-12">
+							<div class="form-group">
+								<h5>Mobile</h5>
+								<div class="clearfix">
+									<div class="row">
+										<div class="col-sm-12">
+											<input  type="number" name="mobile"  ng-model="use.mobile"   required  ng-minlength="10"  ng-maxlength="15"
+												class="form-input form-control">
+										</div>
+										<div  class="col-xs-12"  ng-messages="userForm.mobile.$error" ng-show="valid" >
+										    <div ng-message="required" class="error-message" >You did not input</div>
+										    <div ng-message="number" class="error-message" >invalid</div>
+										    <div ng-message="minlength" class="error-message">too short</div>
+										    <div ng-message="maxlength" class="error-message" >too long</div>
+										  </div>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<div class="col-xs-12">
+							<div class="form-group">
+								<h5>Email</h5>
+								<div class="clearfix">
+									<div class="row">
+										<div class="col-sm-12">
+											<input class="form-input form-control"   ng-model="user.mail"  type="email" ng-maxlength="50" required
+												name="email" >
+										</div>
+										<div  class="col-xs-12"  ng-messages="userForm.email.$error" ng-show="valid">
+										    <div ng-message="required" class="error-message" >You did not input</div>
+										      <div ng-message="email"  class="error-message" >This needs to be a valid email</div>
+										  <div ng-message="maxlength" class="error-message" >too long</div>
+										  </div>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<div class="col-xs-12">
+							<div class="form-group">
+								<h5 >Area of Interest</h5>
+								<div class="clearfix">
+									<div class="row">
+										<div class="col-xs-3"  ng-repeat=" product in products"  repeat-finish="repeatFinish()">
+										
+												<input  type="checkbox"  name="areaOfInterest" value="{{ product.productId }}" >
+												<label> <span > {{ product.productName }}</span> </label>
+											</div>
+										
+									
+										 <div class="col-xs-12"> <span id="aoiMsg" class="error-message" style="display: none;" >You did not select</span></div>
+									</div>
+								</div>
+							</div>
+						</div>
+
+			
+				
+						<div class="col-xs-12 text-center">
+
+						
+						 
+							<button type="submit" id="formsubmit" 
+								class="btn btn-primary cus-btn text-primary">SAVE</button>
+						</div>
+					</div>
+				</div>
+   </form>
+  
+
+</div>

@@ -1,0 +1,14 @@
+<div class="col-md-8 col-md-offset-2">
+
+        <h2>排序</h2>
+   
+  
+         <div id="scrollable-container" as-sortable="sortableOptions" data-ng-model="items">
+             <div ng-repeat="item in items" as-sortable-item class="criteria-box">
+                 <div as-sortable-item-handle>
+                     <span class="noselect" >{{item.name}}</span>
+                 </div>
+             </div>
+         </div>
+
+</div>

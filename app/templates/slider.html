@@ -1,0 +1,17 @@
+<div class="col-md-8 col-md-offset-2">
+
+        <h2>Accidental Death</h2>
+        <br/> <br/>
+        <div class="row" style="text-align: center;  ">
+	       <span  class=" col-sm-2 col-md-1">1000</span>
+			<span class="col-sm-3 col-md-8" ng-model="value">{{value}} </span>
+	       <span  class=" col-sm-2 col-md-1">100000000</span>
+         </div>
+        <div class="row">
+	        <button type="button" class="btn btn-default col-sm-2 col-md-1" ng-click="subtraction()"> <span class="glyphicon glyphicon-minus"></span></button>
+			<slider class="col-sm-8 col-md-8" ng-model="value" min="testOptions.min" step="testOptions.step" max="testOptions.max" ></slider>
+	        <button type="button" class="btn btn-default col-sm-2 col-md-1"  ng-click="add()"> <span class="glyphicon glyphicon-plus" ></span></button>
+         </div>
+  
+
+</div>

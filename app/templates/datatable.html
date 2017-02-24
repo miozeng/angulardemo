@@ -1,0 +1,24 @@
+<div class="col-md-8 col-md-offset-2">
+
+        <h2>datatable</h2>
+   <!--  -->
+  <div >
+    <table datatable="ng" class="row-border hover">
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>FirstName</th>
+            <th>LastName</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr ng-repeat="person in persons">
+            <td>{{ person.id }}</td>
+            <td>{{ person.firstName }}</td>
+            <td>{{ person.lastName }}</td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+</div>
