@@ -6,6 +6,8 @@ msServices.service('msServices',[ '$http','$window',function($http,$window){
 
 	var config = new Config();
 	
+	var userRole = ['ROLE_ADMIN']; 
+	 
 /*
 	
 	this.getSession = function(){
@@ -25,6 +27,15 @@ msServices.service('msServices',[ '$http','$window',function($http,$window){
 			}).error(function(err){    console.log(err);   });
 	}
 	
+	
+	this.userHasRole = function(role){
+		 for (var j = 0; j < userRole.length; j++) {  
+             if (role == userRole[j]) {  
+                 return true;  
+             }  
+         }  
+         return false;  
+	}
 	/*
 	this.findAgents = function(){
 		var data = {cityId:this.getCityId(),bookingDate:this.getBookingDate(),timeslotId:this.getTimeslot(),

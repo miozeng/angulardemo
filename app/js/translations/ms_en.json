@@ -6,7 +6,8 @@
      "SLIDER" : "slider",
      "SORTABLE" : "sortable",
      "FORMS" : "forms",
-     "DRAG" : "drag and drop"
+     "DRAG" : "drag and drop",
+     "AUTH" : "ui auth"
   } 
 }
 }

@@ -16,7 +16,6 @@ var msapp = angular.module('msapp', [
 
 
 
-
 msapp.config(['$routeProvider',
 	function($routeProvider){
 		$routeProvider.
@@ -50,6 +49,12 @@ msapp.config(['$routeProvider',
 				title:"dragdrop | angualr demo",
 				idtitle:"拖拽 |angualr demo"
 			}).
+			when('/uiauth',{
+				templateUrl: 'templates/uiauth.html',
+				controller: 'uiauthCtr',
+				title:"uiauth | angualr demo",
+				idtitle:"ui权限控制 |uiauth demo"
+			}).
 			otherwise({
 				templateUrl: 'templates/center.html',
 				title:"angualr demo",
@@ -80,6 +85,33 @@ msapp.run(['$location', '$rootScope', function($location, $rootScope) {
     });
 }]);
 
+/**/
+msapp.directive('myAccess', ['msServices', 'removeElement', function (msServices, removeElement) {  
+    return{  
+        restrict: 'A',  
+        link: function (scope, element, attributes) {  
+   
+            var hasAccess = false;  
+            var allowedAccess = attributes.myAccess.split(",");  
+            for (i = 0; i < allowedAccess.length; i++) {  
+                if (msServices.userHasRole(allowedAccess[i])) {  
+                    hasAccess = true;  
+                    break;  
+                }  
+            }  
+   
+            if (!hasAccess) {  
+                angular.forEach(element.children(), function (child) {  
+                    removeElement(child);  
+                });  
+                removeElement(element);  
+            }  
+   
+        }  
+    }  
+}]).constant('removeElement', function(element){  
+    element && element.remove && element.remove();  
+}); 
 
 /*
 msapp.directive('repeatFinish',function(){

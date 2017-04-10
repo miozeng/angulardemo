@@ -152,7 +152,10 @@ msControllers.controller('chooseTime',['$scope','$rootScope','msServices',
 
 
 
+msControllers.controller('uiauthCtr', [ '$scope','$rootScope','$http','msServices',
+	function($scope,$rootScope,$http,msServices) {
 
+	} ]);
 
 
 

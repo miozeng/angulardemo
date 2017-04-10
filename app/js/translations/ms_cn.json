@@ -6,7 +6,8 @@
      "SLIDER" : "滑动器",
      "SORTABLE" : "排序",
      "FORMS" : "表单",
-     "DRAG" : "拖拽"
+     "DRAG" : "拖拽",
+     "AUTH" : "前端权限控制"
   } 
 }
 }
