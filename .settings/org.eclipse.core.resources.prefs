@@ -1,8 +1,11 @@
 eclipse.preferences.version=1
+encoding//app/js/translations/ms_cn.json=UTF-8
+encoding//app/js/translations/ms_en.json=UTF-8
 encoding//app/templates/center.html=UTF-8
 encoding//app/templates/datatable.html=UTF-8
 encoding//app/templates/dragdrop.html=UTF-8
 encoding//app/templates/forms.html=UTF-8
 encoding//app/templates/slider.html=UTF-8
 encoding//app/templates/sortable.html=UTF-8
+encoding//app/templates/uiauth.html=UTF-8
 encoding/<project>=UTF-8
