@@ -27,7 +27,12 @@ msServices.service('msServices',[ '$http','$window',function($http,$window){
 			}).error(function(err){    console.log(err);   });
 	}
 	
-	
+	 this.findAllQuotation = function(){ 
+			return $http.get('js/data/quotation.json').success(function(res){
+				return res;
+				}).error(function(err){    console.log(err);   });
+		}
+		
 	this.userHasRole = function(role){
 		 for (var j = 0; j < userRole.length; j++) {  
              if (role == userRole[j]) {  

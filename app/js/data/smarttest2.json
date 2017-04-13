@@ -1,0 +1,42 @@
+[
+    {
+        "firstName": "Sean Kelly",
+        "asize": 5,
+        "bsize": 3,
+        "aget": "0-60",
+        "type": "Child",
+        "format": "1ss"
+    },
+    {
+        "firstName": "Sean Kelly",
+        "asize": 0,
+        "bsize": 0,
+        "aget": "0-60",
+        "type": "Female",
+        "format": "118ss"
+    },
+    {
+        "firstName": "Sean Kelly",
+        "asize": 0,
+        "bsize": 0,
+        "aget": "0-60",
+        "type": "Male",
+        "format": "117"
+    },
+    {
+        "firstName": "Sean Kelly",
+        "asize": 0,
+        "bsize": 2,
+        "aget": "61-65",
+        "type": "Child",
+        "format": "116"
+    },
+    {
+        "firstName": "Sean Kelly",
+        "asize": 0,
+        "bsize": 0,
+        "aget": "61-65",
+        "type": "Child",
+        "format": "112"
+    }
+]

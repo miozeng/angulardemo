@@ -159,6 +159,53 @@ msControllers.controller('uiauthCtr', [ '$scope','$rootScope','$http','msService
 
 
 
+msControllers.controller('ngtableCtr', [ '$scope','$rootScope','$http','msServices','NgTableParams',
+	function($scope,$rootScope,$http,msServices,NgTableParams) {
+	
+	   
+	msServices.findAllQuotation().then(function(res){    
+	$scope.persons  = res.data;
+	 $scope.quotableParams = new NgTableParams({
+	    }, {
+	      dataset: res.data
+	    });
+});
+
+	 
+
+	 
+	} ]);
+
+msControllers.controller('smarttableCtr', [ '$scope','$rootScope', '$filter','$http',
+	function($scope,$rootScope,$filter,$http) {
+	$scope.rowCollection = [
+	        {firstName: 'Laurent', lastName: 'Renard', birthDate: new Date('1987-05-21'), balance: 102, email: 'whatever@gmail.com'},
+	        {firstName: 'Blandine', lastName: 'Faivre', birthDate: new Date('1987-04-25'), balance: -2323.22, email: 'oufblandou@gmail.com'},
+	        {firstName: 'Francoise', lastName: 'Frere', birthDate: new Date('1955-08-27'), balance: 42343, email: 'raymondef@gmail.com'},
+	        {firstName: 'Laurent2', lastName: 'Renard', birthDate: new Date('1987-05-21'), balance: 102, email: 'whatever@gmail.com'},
+	        {firstName: 'Blandine2', lastName: 'Faivre', birthDate: new Date('1987-04-25'), balance: -2323.22, email: 'oufblandou@gmail.com'},
+	        {firstName: 'Francoise2', lastName: 'Frere', birthDate: new Date('1955-08-27'), balance: 42343, email: 'raymondef@gmail.com'},
+	        {firstName: 'Laurent3', lastName: 'Renard', birthDate: new Date('1987-05-21'), balance: 102, email: 'whatever@gmail.com'},
+	        {firstName: 'Blandine3', lastName: 'Faivre', birthDate: new Date('1987-04-25'), balance: -2323.22, email: 'oufblandou@gmail.com'},
+	        {firstName: 'Francoise3', lastName: 'Frere', birthDate: new Date('1955-08-27'), balance: 42343, email: 'raymondef@gmail.com'}
+	    ];
+	
+	$scope.rowCollection1 = [
+        {firstName: 'Laurent', lastName: 'Renard', birthDate: new Date('1987-05-21'), balance: 102}
+    ];
+	
+	$scope.rowCollection2 = [
+        {firstName: 'Laurent', lastName: 'Renard'},
+        {firstName: 'Blandine', lastName: 'Faivre'}
+    ];
+	
+	$http.get('js/data/smarttest2.json').success(function(res){
+		$scope.smart  = res;
+		}).error(function(err){    console.log(err);   });
+	
+	
+	
+	} ]);
 
 
 

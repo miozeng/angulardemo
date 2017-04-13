@@ -4,6 +4,8 @@ var msapp = angular.module('msapp', [
 	'as.sortable',
 	'ui.bootstrap',
 	'ui.bootstrap-slider',
+	'ngTable',
+	'smart-table',
 	'pascalprecht.translate',     
 	'bsLoadingOverlay',
 	'bsLoadingOverlayHttpInterceptor',
@@ -54,6 +56,18 @@ msapp.config(['$routeProvider',
 				controller: 'uiauthCtr',
 				title:"uiauth | angualr demo",
 				idtitle:"ui权限控制 |uiauth demo"
+			}).
+			when('/ngtable',{
+				templateUrl: 'templates/ngtable.html',
+				controller: 'ngtableCtr',
+				title:"ngtable | angualr demo",
+				idtitle:"ngtable表格 |ngtable demo"
+			}).
+			when('/smarttable',{
+				templateUrl: 'templates/smarttable.html',
+				controller: 'smarttableCtr',
+				title:"smarttable | angualr demo",
+				idtitle:"smarttable |uiauth demo"
 			}).
 			otherwise({
 				templateUrl: 'templates/center.html',
@@ -113,6 +127,18 @@ msapp.directive('myAccess', ['msServices', 'removeElement', function (msServices
     element && element.remove && element.remove();  
 }); 
 
+
+msapp.directive('pageSelect', function() {
+    return {
+      restrict: 'E',
+      template: '<input type="text" class="select-page" ng-model="inputPage" ng-change="selectPage(inputPage)">',
+      link: function(scope, element, attrs) {
+        scope.$watch('currentPage', function(c) {
+          scope.inputPage = c;
+        });
+      }
+    }
+  });
 /*
 msapp.directive('repeatFinish',function(){
     return {
