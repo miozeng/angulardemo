@@ -1,0 +1,67 @@
+<h2>smart test</h2>
+<br/>
+<table st-table="rowCollection"  class="table table-bordered table-striped "><!--  st-sticky-header -->
+	<thead>
+	<tr class="mytable">
+		<th  st-sort="firstName">first name</th>
+		<th  st-sort="lastName">last name</th>
+		<th>birth date</th>
+		<th>balance</th>
+		<th>email</th>
+		<th>Edit</th>
+	</tr>
+	<tr >
+		<th>
+			<input st-search="firstName" placeholder="search for firstname" class="input-sm form-control" type="search"/>
+		</th>
+		<th colspan="4">
+			<input st-search placeholder="global search" class="input-sm form-control" type="search"/>
+		</th>
+		<th>
+			<input st-search="{{selectedPredicate}}" placeholder="bound predicate" class="input-sm form-control" type="search"/>
+		</th>
+	</tr>
+	</thead>
+	<tbody>
+	<tr ng-repeat="row in rowCollection" >
+		<td >{{row.firstName}}</td>
+		<td >{{row.lastName}}</td>
+		<td>{{row.birthDate  | date}}</td>
+		<td>{{row.balance}}</td>
+		<td>{{row.email}}</td>
+		<td><button type="button" ng-click="removeRow(row)" class="btn btn-sm btn-danger">edit</button></td>
+	</tr>
+	</tbody>
+		<tfoot >
+			<tr>
+				<td colspan="6" class="text-center">
+					<!--<div st-pagination="" st-items-by-page="5" st-displayed-pages="7"></div>  -->
+					<div st-items-by-page="5" st-pagination="" st-template="pagination.custom.html"></div>
+				</td>
+			</tr>
+		</tfoot>
+</table>
+
+
+
+
+
+ 
+<table st-table="rowCollectionc"  class="table table-bordered table-striped">
+	<thead>
+	<tr>
+		<th st-ratio="10">Benefit </th>
+		<th st-ratio="10">Usia Ulang Tahun Sebelumnya Age Last Birthday </th>
+		<th st-ratio="10">Status Tertanggung Insured Status </th>
+		<th st-ratio="20">(001) Manager </th>
+	</tr>
+	</thead>
+	<tbody>
+	<tr ng-repeat="row in smart">
+		<td ng-if="row.asize > 0" rowspan="{{row.asize}}">{{row.firstName}}</td>
+		<td ng-if="row.bsize > 0" rowspan="{{row.bsize}}">{{row.aget}}</td>
+		<td>{{row.type}}</td>
+		<td>{{row.format}}</td>
+	</tr>
+	</tbody>
+</table>

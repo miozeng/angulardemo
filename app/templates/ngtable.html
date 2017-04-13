@@ -1,0 +1,71 @@
+
+<div class="container">
+    <h3>Quotation Search</h3>
+
+<div class="box-sample Foco">
+    <div class="form-group">
+        <div class="col-md-6 col-sm-12">
+            <label for="Quotation No">Quotation No</label>
+            <input class="form-control" id="QuotationNo" name="QuotationNo" placeholder="Quotation No" type="text" value="">
+        </div>
+        <div class="col-md-6 col-sm-12">
+            <label for="Client Name">Client Name</label>
+            <input class="form-control" id="ClientName" name="ClientName" placeholder="Client Name" type="text" value="">
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-md-6 col-sm-12">
+            <label for="Business Type">Business Type</label><br>
+            <select id="BusinessType" name="BusinessType"><option value="">-- Please Select --</option>
+                <option value="GHCP">Group Inpatient Insurance</option>
+                <option value="GM">Group Medical</option>
+                <option value="GPA">Group Personal Accident</option>
+                <option value="GTL">Group Term Life</option>
+                <option value="UGM">USD Group Medical</option>
+                <option value="UGPA">USD Personal Accident</option>
+                <option value="UGTL">USD Term Life</option>
+            </select>
+        </div>
+        <div class="col-md-6 col-sm-12">
+            <label for="QuotationStatus">Status</label><br>
+            <select id="QuotationStatus" name="QuotationStatus"><option value="">ALL</option>
+                <option value="QStatusNeg">Negotiation</option>
+                <option value="QStatusTra">Transferred</option>
+                <option value="QStatusClo">Closed</option>
+                <option value="QStatusLos">Lose</option>
+                <option value="QStatusCon">Confirmed</option>
+            </select>
+        </div>
+    </div>
+</div>
+</div>
+
+<br/><br/><br/>
+ <div class="bottom_div">
+            <button class="btn btn-info"  my-access="ROLE_ADMIN">Search</button>
+            <button class="btn btn-primary"  my-access="ROLE_TEST">New Quotation</button>
+            <button class="btn btn-warning"  my-access="ROLE_TEST,ROLE_CEO">Cancel</button>
+        </div>
+		
+	<br/>	
+ <div>
+      <h3>ngTable directive</h3>
+      <table ng-table="quotableParams" class="table table-condensed table-bordered table-hover">
+      
+        <tr ng-repeat="quo in $data" >
+          <td sortable="'quotationNo'" title="'quotationNo'" > {{quo.quotationNo}} </td>
+          <td sortable="'businessType'" title="'BusinessType'" > {{quo.businessType}}</td>
+          <td sortable="'clientName'" title="'clientName'" >{{quo.clientName}} </td>
+		   <td sortable="'insuranceCompany'" title="'insuranceCompany'" >{{quo.insuranceCompany}} </td>
+		    <td sortable="'targetCommencementDate'" title="'lastName'" >{{quo.targetCommencementDate}} </td>
+			 <td sortable="'expectExpiry'" title="'expectExpiry'" >{{quo.expectExpiry}} </td>
+			  <td sortable="'status'" title="'status'" >{{quo.status}} </td>
+			    <td  title="'View'" >View</td>
+        </tr>
+      </table>
+	  
+	  
+ 
+	  
+    </div>
+ 
