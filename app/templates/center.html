@@ -1,7 +1,16 @@
 <div class="col-md-8 col-md-offset-2">
 
         <h2>首页</h2>
-   
+        <!--动态添加 var newElement = $compile( "<div my-directive></div>" )( $scope );
+		$("#testdiv").append( newElement ); -->
+		
+    父亲:{{name}}<input ng-model="name" /> 
+ <div my-directive></div> 
   
 
 </div>
+
+<script type='text/ng-template' id='hello.html'> 
+
+<div>儿子:{{ name }}<input ng-model="name"/></div>
+</script>

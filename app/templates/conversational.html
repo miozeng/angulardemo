@@ -1,0 +1,55 @@
+
+
+<div class="col-md-8 col-md-offset-2">
+
+	<h2>conversational form</h2>
+	<div style="height: 500px;">
+		<form id="form" cf-form>
+
+         <input type="text" cf-questions="Input field, once you submitted your answer, you can click your input to <strong>change</strong> it" name="text" value="">
+		  <input type="text" cf-questions="Prevent form submit :)" name="text" value="">
+						
+						
+			<div class="radio-control" >
+							<input cf-label="AI" type="radio" cf-image="https://cdn.space10.io/media/1134/1.png" name="image-preference" tabindex="1" value="0">
+							<input cf-label="Meatball" type="radio" cf-image="https://cdn.space10.io/media/1119/labs-2-1.jpg" name="image-preference" tabindex="2" value="1">
+						</div>
+			<input type="text" cf-questions="What is your firstname?" id="firstname" required cf-error="firstname is required and minlength=10  maxlength=15">
+			<input type="text" cf-questions="What is your lastname?" id="lastname" name="lastname" required cf-error="lastname is required and minlength=10  maxlength=15">
+			<input type="text" cf-questions="Hi {firstname} {lastname}, please tell me your mobile?" id="mobile" required   cf-error="This needs to be a valid mobile">
+			<input type="text" cf-questions="Hi {firstname} {lastname}, please tell me your email?" id="email"
+			pattern="^[-a-z0-9~!$%^&*_=+}{\'?]+(\.[-a-z0-9~!$%^&*_=+}{\'?]+)*@([a-z0-9_][-a-z0-9_]*(\.[-a-z0-9_]+)*\.(aero|arpa|biz|com|coop|edu|gov|info|int|mil|museum|name|net|org|pro|travel|mobi|[a-z][a-z])|([0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}))(:[0-9]{1,5})?$"
+			 required cf-error="This needs to be a valid email">
+			<!-- <label for="firstname">What is sherlocks holmes firstname?</label>-->
+			<!-- <input id="firstname" name="firstname" />  -->
+			<!--  
+			<input
+						type="text"
+						id="billing:firstname"
+						name="lastname"
+
+						cf-validation="window.lastnameCheck"
+						cf-questions="Put on the Sherlock Holmes hat to get past this step, and look at the custom validation method window.lastnameCheck"
+						cf-error="This value goes through the window.javascript method called lastnameCheck, check that for guide.."
+					>-->
+			
+			<fieldset cf-questions="What is your gender?">
+				<label for="male">Male</label> <input type="radio" name="gender"
+					id="male" value="male"><br> <label for="female">Female</label>
+				<input type="radio" name="gender" id="female" value="female"><br>
+
+				<label for="hen">Hen</label> <input type="radio" name="gender"
+					id="hen" value="hen"><br>
+				<br>
+			</fieldset>
+			
+			<fieldset cf-questions="What is your intresting?">
+				<input type="checkbox" cf-label="Subscribe to newsletter1"
+					value="aa"> <input type="checkbox"
+					cf-label="Subscribe to newsletter2" value="bb"> <input
+					type="checkbox" cf-label="Subscribe to newsletter3" value="cc">
+			</fieldset>
+		</form>
+	</div>
+
+</div>

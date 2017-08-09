@@ -1,5 +1,13 @@
 var msControllers = angular.module('msControllers',[]);
 
+msControllers.controller('centerCtr', [ '$scope', '$translate','$rootScope','msServices',
+	function($scope, $translate, $rootScope,msServices) {
+
+	$scope.name  = "mio";
+
+		
+	} ]);
+
 msControllers.controller('ctrl', [ '$scope', '$translate','$rootScope','msServices',
 	function($scope, $translate, $rootScope,msServices) {
 
@@ -209,4 +217,52 @@ msControllers.controller('smarttableCtr', [ '$scope','$rootScope', '$filter','$h
 
 
 
+msControllers.controller('conversationalCtr', [ '$scope','$rootScope', '$filter','$http',
+	function($scope,$rootScope,$filter,$http) {
+
+	var lastnameCheck = function(dto, success, error){
+		console.log("testValidation, dto:", dto, success, error);
+		if(dto.text.toLowerCase().indexOf("zeng") != -1)
+			return success();
+		return error();
+	};
+	window.onload = function(){
+		var conversationalForm = window.cf.ConversationalForm.startTheConversation({
+			formEl: document.getElementById("form"),
+			context: document.getElementById("cf-context"),
+			flowStepCallback: function(dto, success, error){
+				
+				if(dto.tag.id == "firstname"){
+					var fn =dto.tag.value;
+					if(fn.length >2 &&fn.length <15){
+						return success();
+					}else{
+						return error();
+					}
+					//conversationalForm.stop("Stopping form, but added value");
+				}else if(dto.tag.id == "lastname"){
+					var fn =dto.tag.value;
+					if(fn.length >2 &&fn.length <15){
+						return success();
+					}else{
+						return error();
+					}
+				}else if(dto.tag.name == "gender"){
+					if(dto.tag.value[0] != ""){
+						return success();
+					}else{
+						return error();
+					}
+				}
+				return success();
+			},
+			submitCallback: function(){
+				// remove Conversational Form
+				alert("success done!")
+			}
+		});
+	};
+	
+	
+	} ]);
 

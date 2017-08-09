@@ -69,8 +69,15 @@ msapp.config(['$routeProvider',
 				title:"smarttable | angualr demo",
 				idtitle:"smarttable |uiauth demo"
 			}).
+			when('/conversational',{
+				templateUrl: 'templates/conversational.html',
+				controller: 'conversationalCtr',
+				title:"conversational | conversational demo",
+				idtitle:"conversational |conversational demo"
+			}).
 			otherwise({
 				templateUrl: 'templates/center.html',
+				controller: 'centerCtr',
 				title:"angualr demo",
 				idtitle:"angualr demo"
 			});
@@ -139,6 +146,14 @@ msapp.directive('pageSelect', function() {
       }
     }
   });
+
+msapp.directive('myDirective', function() { 
+	 return { 
+		 restrict: 'EAC', 
+		 templateUrl: 'hello.html', 
+		 replace: true 
+		 }; 
+});
 /*
 msapp.directive('repeatFinish',function(){
     return {
