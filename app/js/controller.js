@@ -63,8 +63,27 @@ msControllers.controller('ctrl', [ '$scope', '$translate','$rootScope','msServic
     }]
 );
 
-msControllers.controller('tableCtr', [ '$scope','$rootScope','$http','msServices',
-	function($scope,$rootScope,$http,msServices) {
+msControllers.controller('tableCtr', [ '$scope','$rootScope','$http','msServices','DTOptionsBuilder','DTColumnBuilder','DTColumnDefBuilder',
+	function($scope,$rootScope,$http,msServices,DTOptionsBuilder, DTColumnBuilder,DTColumnDefBuilder) {
+
+
+		$scope.dtOptions = DTOptionsBuilder.newOptions()
+		.withOption('paging', false)
+		.withOption('searching', true)
+		.withOption('info', true)
+		.withButtons([
+		{
+			extend : "csvHtml5",
+			text : '<i class="fa fa-file-text-o"></i> csv',
+			filename:  "city",
+			exportOptions : {columns:[0,1,2,3,4]}
+		},
+		{
+			extend : 'print',
+			text : '<i class="fa fa-print" aria-hidden="true"></i> Print',
+			titleAttr : 'Print'
+		} ]);
+
 		msServices.findAllUser().then(function(res){    
 			$scope.persons  = res.data;
         });
@@ -266,3 +285,12 @@ msControllers.controller('conversationalCtr', [ '$scope','$rootScope', '$filter'
 	
 	} ]);
 
+msControllers.controller('testCtr', [ '$scope','$rootScope','$http','msServices',
+	function($scope,$rootScope,$http,msServices) {
+	
+	 if($("form[class='dform']").length>0){
+		alert("aa");
+	}
+
+	 
+	} ]);

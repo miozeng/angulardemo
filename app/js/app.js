@@ -13,6 +13,7 @@ var msapp = angular.module('msapp', [
 	'msServices',
 	'mServiceServices',
 	'errorServices',
+	'datatables.buttons',
 	'datatables'
 ]);
 
@@ -74,6 +75,12 @@ msapp.config(['$routeProvider',
 				controller: 'conversationalCtr',
 				title:"conversational | conversational demo",
 				idtitle:"conversational |conversational demo"
+			}).
+			when('/test',{
+				templateUrl: 'templates/createAppointment2.html',
+				controller: 'testCtr',
+				title:"test | test demo",
+				idtitle:"test |test demo"
 			}).
 			otherwise({
 				templateUrl: 'templates/center.html',
